@@ -47,7 +47,7 @@ export function CyclesContextProvider({
   }
 
   function markCurrentCycleAsFinished() {
-    dispatch(markCurrentCycleAsFinishedAction);
+    dispatch(markCurrentCycleAsFinishedAction());
   }
 
   function createNewCycle(data: CreateCycleData) {
@@ -62,12 +62,11 @@ export function CyclesContextProvider({
 
     dispatch(addNewCycleAction(newCycle));
 
-    // setCycles((state) => [...state, newCycle]);
     setAmountSecondsPassed(0);
   }
 
   function interruptCurrentCycle() {
-    dispatch(interruptCurrentCycleAction);
+    dispatch(interruptCurrentCycleAction());
   }
 
   return (
