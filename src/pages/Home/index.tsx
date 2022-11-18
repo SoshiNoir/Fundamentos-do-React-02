@@ -35,7 +35,12 @@ export function Home() {
     },
   });
 
-  const { handleSubmit, watch /*reset*/ } = newCycleForm;
+  const { handleSubmit, watch, reset } = newCycleForm;
+
+  function handleCreateNewCycle(data: NewCycleFormData) {
+    createNewCycle(data);
+    reset();
+  }
 
   const task = watch('task');
 
